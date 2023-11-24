@@ -1,7 +1,9 @@
 const router = require('express').Router();
+const path = require('path');
+const rootDir = require('../util/path');
 
 router.get('/', (req, res, next) => {
-    res.send('<h1>This is the default page</h1>');
+    res.sendFile(path.join(rootDir, "views", "shop.html"));
 })
 
 module.exports = router;
